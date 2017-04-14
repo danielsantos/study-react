@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {lista : []};
   }
 
-  componentWillMount() {
+  componentDidMount() {
     $.ajax({
       url : "http://cdc-react.herokuapp.com/api/autores",
       dataType : 'json',
@@ -81,7 +81,7 @@ class App extends Component {
                     {
                         this.state.lista.map (function(autor) {
                           return (
-                              <tr>
+                              <tr key={autor.id}>
                                 <td>{autor.nome}</td>
                                 <td>{autor.email}</td>
                               </tr>
