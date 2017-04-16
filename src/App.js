@@ -20,6 +20,25 @@ class App extends Component {
     });
   }
 
+  enviaForm(evento) {
+    evento.preventDefault();
+
+    $.ajax({
+      url : 'http://cdc-react.herokuapp.com/api/autores',
+      contentType : 'application/json',
+      dataType : 'json',
+      type : 'post',
+      data : '{}',
+      success : function(resposta) {
+        console.log("Enviado com Sucesso");
+      },
+      error : function(resposta) {
+        console.log("erro");
+      }
+    });
+    
+  }
+
   render() {
     return (
 
@@ -49,7 +68,7 @@ class App extends Component {
 
         <div className="content" id="content">
               <div className="pure-form pure-form-aligned">
-                <form className="pure-form pure-form-aligned">
+                <form className="pure-form pure-form-aligned" onSubmit={this.enviaForm} method="post">
                   <div className="pure-control-group">
                     <label htmlFor="nome">Nome</label>
                     <input id="nome" type="text" name="nome" value=""  />
