@@ -5,40 +5,40 @@ import AutorBox from './Autor';
 
 class App extends Component {
 
-  render() {
+  render() {    
     return (
+      <div id="layout">
+          
+          <a href="#menu" id="menuLink" className="menu-link">
+              
+              <span></span>
+          </a>
 
-<div id="layout">
+          <div id="menu">
+              <div className="pure-menu">
+                  <a className="pure-menu-heading" href="#">Company</a>
 
-    <a href="#menu" id="menuLink" className="menu-link">
+                  <ul className="pure-menu-list">
+                      <li className="pure-menu-item"><a href="#" className="pure-menu-link">Home</a></li>
+                      <li className="pure-menu-item"><a href="#" className="pure-menu-link">Autor</a></li>
+                      <li className="pure-menu-item"><a href="#" className="pure-menu-link">Livro</a></li>
 
-        <span></span>
-    </a>
+                      
+                  </ul>
+              </div>
+          </div>
 
-    <div id="menu">
-        <div className="pure-menu">
-            <a className="pure-menu-heading" href="#">Company</a>
+              <div id="main">
+                  <div className="header">
+                    <h1>Cadastro de Autores</h1>
+                  </div>
+                  <div className="content" id="content">
+                    <AutorBox/>
+                  </div>
+                </div>            
 
-            <ul className="pure-menu-list">
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Home</a></li>
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Autor</a></li>
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Livro</a></li>
-            </ul>
-        </div>
-    </div>
 
-    <div id="main">
-        <div className="header">
-            <h1>Cadastro de Autores</h1>
-        </div>
-
-        <div className="content" id="content">
-          <AutorBox/>
-        </div>
-    </div>
-
-</div>
-
+      </div>     
     );
   }
 }
